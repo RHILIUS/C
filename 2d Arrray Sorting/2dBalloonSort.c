@@ -13,7 +13,7 @@ int main() {
   int col = sizeof(nums[0])/sizeof(nums[0][0]);
   int temp;
 
-  // Bubble Sort
+  // Balloon Sort
   for (i = 0; i < row; i++) {
     for (j = 0; j < col; j++) {
       for (k = 0; k < row; k++) {
