@@ -6,7 +6,7 @@ int main() {
   char temp;
 
   // Enter the string
-  printf("Type the string to be revesed:\n");
+  printf("Enter the string to be reversed:\n");
   scanf("%[^\n]s", &str);
 
   for (int i = 0; i < strlen(str)/2; i++) {
