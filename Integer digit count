@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+
+  
+  int num;
+  int temp;
+  int count = 0;
+
+  // Prompt the user for the value
+  printf("Enter number to count: ");
+  scanf("%d", &num);
+  temp = abs(num);
+
+  // Count the number of digits
+  do {
+    count++;
+    temp /= 10;
+  } while (temp > 0);
+
+  // Display the counted digit
+  printf("The number has %d digit\n", count);
+
+
+
+
+  return 0;
+}
