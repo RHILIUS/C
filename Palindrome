@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+int palindrome(char* str);
+
+int main() {
+  // Declaration
+  char myStr[100];
+
+  printf("Enter your string: ");
+  scanf("%s", myStr); // The '&' is no longer needed since an array returns the memory address already
+  myStr[strlen(myStr)] = '\0'; // Add a null character at the last index
+
+  if (palindrome(myStr)) {
+    printf("%s is a Palindrome\n", myStr);
+  } else {
+    printf("%s is Not a Palindrome\n", myStr);
+  }
+  return 0;
+}
+
+int palindrome(char* str) {
+
+  int is_palindrome = 1;
+  int length = strlen(str);
+
+  for (int i = 0; i < length/2; i++) {
+    if (str[i] != str[length-i-1]) {
+      is_palindrome = 0;
+      break;
+    }
+  }
+
+  return is_palindrome;
+}
