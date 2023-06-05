@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Node {
+  int value;
+  struct Node *next;
+} Node;
+
+int main() {
+
+  Node *head,*curr,*tail;
+  head = (Node*)malloc(sizeof(Node));
+  tail = head;
+  curr = head;
+  int nodeLength = 0;
+  printf("Head: %p\n", head);
+  
+  do {
+    // Assigning value to current node
+    printf("Enter value: ");
+    scanf("%d", &curr->value);
+    if (curr->value == 0) {
+      break;
+    }
+    tail = curr;
+    // Migrating to next node
+    curr->next = (Node*)malloc(sizeof(Node));
+    curr = curr->next;
+    
+    nodeLength++;
+  } while (1);
+
+
+  tail->next = head;
+  printf("Tail: %p\n", tail);
+  
+  curr = head;
+
+  for (int i = 0; i < nodeLength; i++) {
+    printf("Node %d: \n", i+1);
+    printf("  Node Address: %p\n", curr);
+    printf("  Value: %d\n", curr->value);
+    printf("  Next: %p\n", curr->next);
+    curr = curr->next;
+  }
+
+  printf("---------------------------\n");
+
+  // Display values from the linklist
+  curr = head;
+  do {
+    printf("%d\n", curr->value);
+    curr = curr->next;
+  } while (curr != head);
+}
