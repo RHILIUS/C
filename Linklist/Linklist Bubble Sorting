@@ -1,0 +1,17 @@
+  curr = head;
+  int temp;
+  int switched = 1;
+
+  while (switched) {
+    switched = 0;
+    curr = head;
+    while(curr->next != NULL) {
+      if (curr->val > curr->next->val) {
+        temp = curr->val;
+        curr->val = curr->next->val;
+        curr->next->val = temp;
+        switched = 1;
+      }
+      curr = curr->next;
+   }
+  }
